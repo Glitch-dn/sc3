@@ -1,0 +1,21 @@
+@if (post) {
+<div class="card">
+  <h5 class="card-header">{{ post.title }}</h5>
+  <div class="card-body">
+    <p>{{ post.category }}</p>
+    <p>
+      <i>Data pubblicazione: {{ post.date | date : "fullDate" }}</i>
+    </p>
+    <p class="card-text">
+      {{ post.body }}
+    </p>
+    <button
+      type="button"
+      class="btn btn-primary"
+      (click)="aggiungiPreferito($event)"
+    >
+      Aggiungi ai preferiti
+    </button>
+  </div>
+</div>
+}
