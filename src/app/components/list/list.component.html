@@ -1,6 +1,13 @@
 <div class="d-flex flex-column gap-3">
   <h1>Post</h1>
   <div class="btn-group" role="group" aria-label="Basic example">
+    <button
+      type="button"
+      class="btn btn-outline-primary"
+      (click)="resetCategoria()"
+    >
+      Tutti
+    </button>
     @for (c of categories; track $index) {
     <button
       type="button"

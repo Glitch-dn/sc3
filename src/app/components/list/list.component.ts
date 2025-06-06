@@ -28,4 +28,8 @@ export class ListComponent implements OnInit {
     this.posts_filtered = this.posts.filter(post => post.category === categories.id);
     this.selectedCategory = categories;
   }
+  resetCategoria() {
+    this.selectedCategory = null;
+    this.posts_filtered = [];
+  }
 }
