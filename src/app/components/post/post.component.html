@@ -2,7 +2,9 @@
 <div class="card">
   <h5 class="card-header">{{ post.title }}</h5>
   <div class="card-body">
-    <p>{{ post.category }}</p>
+    <p>
+      <strong style="color: rgb(10, 88, 202)">{{ post.category }}</strong>
+    </p>
     <p>
       <i>Data pubblicazione: {{ post.date | date : "fullDate" }}</i>
     </p>
