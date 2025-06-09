@@ -1,22 +1,23 @@
 <div class="d-flex flex-column gap-3">
   <h1>Post</h1>
   <div class="btn-group" role="group" aria-label="Basic example">
+    @for (c of categories; track $index) { @if (c.title == 'Tutti') {
     <button
       type="button"
-      class="btn btn-outline-primary"
-      (click)="resetCategoria()"
-    >
-      Tutti
-    </button>
-    @for (c of categories; track $index) {
-    <button
-      type="button"
-      class="btn btn-outline-primary"
-      (click)="cambiaCategoria(c)"
+      class="btn btn-outline-primary category-button"
+      (click)="resetCategoria($event)"
     >
       {{ c.title }}
     </button>
-    }
+    } @else {
+    <button
+      type="button"
+      class="btn btn-outline-primary category-button"
+      (click)="cambiaCategoria(c, $event)"
+    >
+      {{ c.title }}
+    </button>
+    } }
   </div>
   @if (!selectedCategory) { @for (p of posts; track $index) {
   <app-post [post]="p"></app-post>

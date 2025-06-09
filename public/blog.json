@@ -83,6 +83,10 @@
   ],
   "postCategories": [
     {
+      "id": "tutti",
+      "title": "Tutti"
+    },
+    {
       "id": "travel",
       "title": "Viaggi"
     },
