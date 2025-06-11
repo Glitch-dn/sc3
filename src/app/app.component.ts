@@ -1,7 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ListComponent } from './components/list/list.component';
 import { FavoritesComponent } from "./components/favorites/favorites.component";
+import { PostService } from './services/post.service';
 
 @Component({
   selector: 'app-root',
@@ -12,7 +13,9 @@ import { FavoritesComponent } from "./components/favorites/favorites.component";
 export class AppComponent {
   title = 'sc3';
 
-  reload(){
-    window.location.reload();
+  
+  pService: PostService = inject(PostService);
+  clear(){
+    this.pService.preferiti = [];
   }
 }

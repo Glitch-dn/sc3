@@ -8,7 +8,7 @@ import { Post, PostCategory, PostResponse } from '../model/post';
 export class PostService {
 
   preferiti: Post[] = [];
-
+  selectedCategory: PostCategory | null = null;
   constructor(private http: HttpClient) { }
 
   getPosts(){

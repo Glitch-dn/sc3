@@ -25,13 +25,10 @@ export class ListComponent implements OnInit {
   }
 
   cambiaCategoria(categories: PostCategory, event: MouseEvent) {
-    this.selectedCategory = categories.title !== 'Tutti' ? categories : null;
+    this.selectedCategory = categories;
     this.posts_filtered = this.post_service.filtraPerCategoria(this.posts, categories);
     const buttons = document.querySelectorAll('.category-button');
     buttons.forEach(button => button.classList.remove('active'));
-    const clickedButton = event.target as HTMLElement;
-    if (clickedButton) {
-      clickedButton.classList.add('active');
-    }
+    
   }
 }

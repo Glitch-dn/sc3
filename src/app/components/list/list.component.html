@@ -6,12 +6,14 @@
       type="button"
       class="btn btn-outline-primary category-button"
       (click)="cambiaCategoria(c, $event)"
+      [ngClass]="{ active: selectedCategory === c }"
     >
       {{ c.title }}
     </button>
     }
   </div>
-  @if (!selectedCategory) { @for (p of posts; track $index) {
+  @if (!selectedCategory || selectedCategory?.title == 'Tutti') { @for (p of
+  posts; track $index) {
   <app-post [post]="p"></app-post>
   } } @else{ @for (p of posts_filtered; track $index) {
   <app-post [post]="p"></app-post>
