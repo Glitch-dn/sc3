@@ -1,15 +1,7 @@
 <div class="d-flex flex-column gap-3">
   <h1>Post</h1>
   <div class="btn-group" role="group" aria-label="Basic example">
-    @for (c of categories; track $index) { @if (c.title == 'Tutti') {
-    <button
-      type="button"
-      class="btn btn-outline-primary category-button"
-      (click)="resetCategoria($event)"
-    >
-      {{ c.title }}
-    </button>
-    } @else {
+    @for (c of categories; track $index) {
     <button
       type="button"
       class="btn btn-outline-primary category-button"
@@ -17,7 +9,7 @@
     >
       {{ c.title }}
     </button>
-    } }
+    }
   </div>
   @if (!selectedCategory) { @for (p of posts; track $index) {
   <app-post [post]="p"></app-post>

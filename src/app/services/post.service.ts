@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Post, PostResponse } from '../model/post';
+import { Post, PostCategory, PostResponse } from '../model/post';
 
 @Injectable({
   providedIn: 'root'
@@ -21,5 +21,13 @@ export class PostService {
   }
   rimuoviPreferito(post: Post) {
     this.preferiti = this.preferiti.filter(p => p !== post);
+  }
+
+  filtraPerCategoria(posts: Post[], category: PostCategory): Post[] {
+    if (category.title !== 'Tutti') {
+      return posts.filter(post => post.category === category.id);
+    } else {
+      return [];
+    }
   }
 }
